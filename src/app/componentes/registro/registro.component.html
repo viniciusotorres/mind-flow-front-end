@@ -1,0 +1,48 @@
+<div class="center-content">
+  <mat-card class="card-register">
+    <mat-card-title>Crie a sua conta</mat-card-title>
+    <form [formGroup]="formRegister" novalidate>
+      <mat-card-content class="conteudo-register">
+        <mat-form-field appearance="outline" class="form-field-full">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Ex. seuemail@example.com">
+          <mat-error *ngIf="formRegister.get('email')?.hasError('email') && formRegister.get('email')?.touched">
+            Por favor, informe um email válido.
+          </mat-error>
+          <mat-error *ngIf="formRegister.get('email')?.hasError('required') && formRegister.get('email')?.touched">
+            Email é <strong>obrigatório</strong>.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field-full">
+          <mat-label>Nome Completo</mat-label>
+          <input type="text" matInput formControlName="nomeCompleto" placeholder="Ex. João da Silva">
+          <mat-error *ngIf="formRegister.get('nomeCompleto')?.hasError('required') && formRegister.get('nomeCompleto')?.touched">
+            Nome completo é <strong>obrigatório</strong>.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field-full">
+          <mat-label>Endereço</mat-label>
+          <input type="text" matInput formControlName="endereco" placeholder="Ex. Rua Principal, 123">
+          <mat-error *ngIf="formRegister.get('endereco')?.hasError('required') && formRegister.get('endereco')?.touched">
+            Endereço é <strong>obrigatório</strong>.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field-full">
+          <mat-label>Senha</mat-label>
+          <input type="password" matInput formControlName="senha">
+          <mat-error *ngIf="formRegister.get('senha')?.invalid && formRegister.get('senha')?.touched">
+            Senha é <strong>obrigatória</strong>.
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+    </form>
+
+    <mat-card-actions>
+      <button mat-button color="primary" class="full" (click)="registrar()">Registrar</button>
+      <button mat-button color="primary" class="full"  routerLink="/login">Entrar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

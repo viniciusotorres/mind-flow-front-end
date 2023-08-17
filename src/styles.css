@@ -3,3 +3,16 @@
 @import '~primeflex/primeflex.css';
 @import '~primeng/resources/themes/bootstrap4-light-blue/theme.css';
 @import '~primeng/resources/primeng.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.dark-theme {
+  background-color: aquamarine rgb(207, 207, 207);
+}
+
+.light-theme {
+  background-color: #ffffff;
+}

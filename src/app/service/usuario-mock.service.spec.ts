@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MindFlowService } from './mind-flow.service';
+import { UsuarioMockService } from './usuario-mock.service';
 
-describe('MindFlowService', () => {
-  let service: MindFlowService;
+describe('UsuarioMockService', () => {
+  let service: UsuarioMockService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MindFlowService);
+    service = TestBed.inject(UsuarioMockService);
   });
 
   it('should be created', () => {

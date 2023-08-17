@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-  <div class="login-box">
-    <h2>Acesse seu MindFlow</h2>
-    <form>
-      <div class="user-box">
-        <input type="text" name="" required="">
-        <label>E-mail</label>
-      </div>
-      <div class="user-box">
-        <input type="password" name="" required="">
-        <label>Senha</label>
-      </div>
-      <div class="buttons-container">
-        <a href="#" class="btn btn-login" (click)="fazendoLogin()">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          ENTRAR
-        </a>
-        <div class="create-account">
-          <span>Você não tem conta?</span>
-        </div>
-        <a [routerLink]="['/irAoCadastro']" class="btn btn-create-account" style="margin-top: 10px;">CRIAR CONTA</a>
-      </div>
-    </form>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="/js/main.js"></script>
-</body>
-</html>
+<div class="center-content">
+<mat-card class="card-login">
+  <mat-card-title>Entre no seu MindFlow</mat-card-title>
+  <form [formGroup]="formLogin" novalidate>
+    <mat-card-content class="conteudo-login">
+      <mat-form-field appearance="outline" class="form-field-full">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" placeholder="Ex. perukas@example.com">
+        <mat-error *ngIf="formLogin.get('email')?.hasError('email') && formLogin.get('email')?.touched">
+          Por favor, informe um email válido.
+        </mat-error>
+        <mat-error *ngIf="formLogin.get('email')?.hasError('required') && formLogin.get('email')?.touched">
+          Email é <strong>obrigatório</strong>.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field-full">
+        <mat-label>Senha</mat-label>
+        <input type="password" matInput formControlName="senha">
+        <mat-error *ngIf="formLogin.get('senha')?.invalid && formLogin.get('senha')?.touched">
+          Senha é <strong>obrigatória</strong>.
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+  </form>
+
+  <mat-card-actions>
+    <button mat-button color="warn" class="full" (click)="logar()">Entrar</button>
+    <button mat-button color="warn" class="full" routerLink="/registro">Registrar</button>
+  </mat-card-actions>
+</mat-card>
+</div>
