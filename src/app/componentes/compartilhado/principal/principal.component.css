@@ -1,0 +1,40 @@
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* Estilo para a barra de ferramentas */
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px; /* Adicione um espaçamento horizontal */
+}
+
+/* Estilo para a seção de informações do usuário */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Espaçamento entre o nome do usuário e o ícone de logout */
+.user-info mat-icon-button {
+  margin-left: 8px;
+}
+
+/* Alinhar o ícone de logout no mesmo nível vertical do nome do usuário */
+.user-info mat-icon {
+  vertical-align: middle;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .main-content {
+    padding: 10px;
+  }
+}

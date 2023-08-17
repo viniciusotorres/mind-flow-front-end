@@ -3,16 +3,10 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #ff626a; /* Cor rosa cor de pele */
-}
-.logo-img-login {
-  width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
-  height: 100px;
-  margin-bottom: 20px; /* Espaçamento entre a imagem e o título */
+  background-color: #971a6e; /* Cor rosa cor de pele */
 }
 
-
-.card-login {
+.card-register {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -20,7 +14,6 @@
   text-align: center;
   border-radius: 13%;
   background-color: #ffffff; /* Cor branca para o card */
-
 }
 
 .full {
