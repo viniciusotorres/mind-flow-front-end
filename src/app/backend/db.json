@@ -34,6 +34,13 @@
       "endereco": "Vicente Pires",
       "senha": "123456",
       "id": 5
+    },
+    {
+      "email": "arthur@gmail.com",
+      "nomeCompleto": "Arthur",
+      "endereco": "Vp",
+      "senha": "123456",
+      "id": 6
     }
   ]
 }

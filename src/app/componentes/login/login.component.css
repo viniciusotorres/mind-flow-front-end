@@ -3,12 +3,11 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #ff626a; /* Cor rosa cor de pele */
+  background: linear-gradient(135deg, #87CEEB, #1E90FF);
 }
-.logo-img-login {
-  width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
-  height: 100px;
-  margin-bottom: 20px; /* Espaçamento entre a imagem e o título */
+
+.material-symbols-outlined {
+  font-size: 150px;
 }
 
 

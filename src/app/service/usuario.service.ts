@@ -9,8 +9,9 @@ import { UsuarioMockService } from './usuario-mock.service'; // Importe o novo s
   providedIn: 'root'
 })
 export class UsuarioService {
-
-  constructor(private router: Router, private usuarioMockService: UsuarioMockService) {}
+  constructor(private router: Router,
+              private usuarioMockService: UsuarioMockService,
+              ) {}
 
 
 
@@ -21,6 +22,7 @@ export class UsuarioService {
           localStorage.setItem('token', btoa(JSON.stringify(resposta.tokenQueSeriaGeradoPelaAPI)));
           localStorage.setItem('usuario', btoa(JSON.stringify(resposta.usuario)));
           this.router.navigate(['']);
+          location.reload();
         }
       })
     );
@@ -32,8 +34,6 @@ export class UsuarioService {
   }
 
    obterUsuarioLogado(): IUsuario | null {
-
-
     const usuarioString = localStorage.getItem('usuario');
     return usuarioString ? JSON.parse(atob(usuarioString)) : null;
   }
@@ -51,5 +51,6 @@ export class UsuarioService {
   get logado(): boolean {
     return localStorage.getItem('token') ? true : false;
   }
+
 }
 

@@ -32,4 +32,6 @@ export class UsuarioMockService {
   obterDadosUsuario(idUsuario: number): Observable<IUsuario> {
     return this.httpClient.get<IUsuario>(`http://localhost:3000/usuarios/${idUsuario}`);
   }
+
+
 }
