@@ -1,0 +1,146 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+  text-align: center;
+  margin-top: 10px;
+}
+.card{
+  margin-top: 30px;
+  height: 150px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-right: 5px;
+  align-items: center;
+
+}
+
+.card.estudos {
+  background-image: linear-gradient(to left, rgb(255, 255, 255), transparent), url("https://redacaonline.com.br/wp-content/uploads/2020/03/mesa_estudos-1-1024x725.jpg");
+  background-size: cover;
+  font-size: 20px;
+  margin-left: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.3s ease;
+  filter: blur(2px);
+}
+.card.estudos:hover {
+  filter: blur(0px);
+}
+
+.card.estudos::after,
+.card.estudos .hover-text {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+.card.estudos:hover::after,
+.card.estudos:hover .hover-text {
+  opacity: 1;
+}
+
+.card-text {
+  position: relative;
+  z-index: 2;
+}
+
+.card.saude {
+  background-image: linear-gradient(to left, rgb(255, 255, 255), transparent), url("https://blog.gsuplementos.com.br/wp-content/uploads/2022/05/iStock-628504820.jpg ");
+  background-size: cover;
+  font-size: 20px;
+  margin-left: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.3s ease;
+  filter: blur(2px);
+}
+.card.saude:hover {
+  filter: blur(0px);
+}
+
+.card.saude::after,
+.card.saude .hover-text {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+.card.saude:hover::after,
+.card.saude:hover .hover-text {
+  opacity: 1;
+}
+
+.card-text {
+  position: relative;
+  z-index: 2;
+}
+
+.card.espiritual {
+  background-image: linear-gradient(to left, rgb(255, 255, 255), transparent), url("https://blog.tremeterra.com.br/wp-content/uploads/2019/07/286234-saiba-como-comecar-a-meditar-e-melhorar-a-qualidade-de-vida-700x510.jpg");
+  background-size: cover;
+  font-size: 20px;
+  margin-left: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.3s ease;
+  filter: blur(2px);
+}
+.card.espiritual:hover {
+  filter: blur(0px);
+}
+
+.card.espiritual::after,
+.card.espiritual .hover-text {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+.card.espiritual:hover::after,
+.card.espiritual:hover .hover-text {
+  opacity: 1;
+}
+
+.card-text {
+  position: relative;
+  z-index: 2;
+}

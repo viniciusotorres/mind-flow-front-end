@@ -1,35 +1,18 @@
-<mat-toolbar>
-  <span class="toolbar-title" >MindFlow - Sistema de Organização de Tarefas</span>
-  <div class="user-info">
-    Olá, {{ usuarioLogado?.nomeCompleto }}<!-- Exibe o nome da pessoa logada -->
-    <mat-slide-toggle style="margin-left: 10px;">
-      <mat-icon>brightness_2</mat-icon>
-    </mat-slide-toggle>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/">
-        <mat-icon>account_balance</mat-icon>
-        <span>Inicio</span>
-      </button>
-      <button mat-menu-item routerLink="/perfil">
-        <mat-icon>fingerprint</mat-icon>
-        <span>Perfil</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>spa</mat-icon>
-        <span>MindFlow</span>
-      </button>
-      <button mat-menu-item (click)="deslogar()">
-        <mat-icon>logout</mat-icon>
-        <span>Sair</span>
-      </button>
-    </mat-menu>
-  </div>
-</mat-toolbar>
-
 <div class="main-content">
-  <h1>Bem-vindo ao MindFlow!</h1>
-  <p>Aqui você pode organizar suas tarefas de maneira eficiente.</p>
+  <h1><b>Bem-vindo ao MindFlow: Organize sua mente!</b></h1>
+  <p>Seja bem-vindo à plataforma MindFlow, sua ferramenta de organização pessoal e planejamento! Aqui, estamos comprometidos em ajudá-lo a alcançar um equilíbrio saudável em todas as áreas da sua vida.
+
+    Você está prestes a começar uma jornada de autodescoberta e planejamento estratégico. O MindFlow é projetado para ajudá-lo a criar uma visão clara das diferentes áreas da sua vida e desenvolver um plano prático para alcançar suas metas e sonhos.</p>
+    <h1><b>Por que usar o MindFlow?</b></h1>
+    <p>O MindFlow oferece uma abordagem única para o gerenciamento e organização de várias esferas da sua vida. Seja na sua carreira, saúde, relacionamentos, crescimento pessoal ou lazer, o MindFlow permite que você escolha suas áreas de foco e defina objetivos específicos em cada uma delas.</p>
+  <h1><b>Como funciona: Escolha suas Áreas de Foco</b></h1>
+  <P>Ao entrar na plataforma, você encontrará uma seleção de áreas da vida para escolher. Selecione aquelas que mais importam para você no momento. Quer se aprimorar profissionalmente? Ou talvez deseje investir mais tempo em seus hobbies? Seja qual for o seu objetivo, o MindFlow está aqui para apoiar você.</P>
+  <h1><b>Defina Metas Significativas</b></h1>
+  <p>Uma vez que você tenha escolhido suas áreas de foco, é hora de definir metas. Estabeleça metas SMART (Específicas, Mensuráveis, Atingíveis, Relevantes e Temporais) para cada área selecionada. O MindFlow irá guiá-lo no processo, ajudando-o a desmembrar suas metas em etapas alcançáveis.</p>
+  <h1><b>Acompanhe Seu Progresso</b></h1>
+  <p>A medida que você avança em direção às suas metas, o MindFlow fornece ferramentas para rastrear seu progresso. Visualize seu avanço, ajuste sua estratégia quando necessário e celebre suas conquistas ao longo do caminho.
+
+    Estamos animados em tê-lo como parte da nossa comunidade MindFlow. Preparado para criar a vida que você sempre quis? Vamos começar!
+
+    Escolha suas áreas, defina suas metas e comece a trilhar um caminho mais organizado, produtivo e satisfatório com o MindFlow.</p>
 </div>

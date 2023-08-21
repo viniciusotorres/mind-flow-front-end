@@ -1,6 +1,11 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 <div class="center-content">
 <mat-card class="card-login">
-  <mat-card-title>Entre no seu MindFlow</mat-card-title>
+  <mat-card-title></mat-card-title>
+  <div>
+    <span class="material-symbols-outlined">
+      neurology</span>
+</div>
   <form [formGroup]="formLogin" novalidate>
     <mat-card-content class="conteudo-login">
       <mat-form-field appearance="outline" class="form-field-full">
@@ -25,8 +30,8 @@
   </form>
 
   <mat-card-actions>
-    <button mat-button color="warn" class="full" (click)="logar()">Entrar</button>
-    <button mat-button color="warn" class="full" routerLink="/registro">Registrar</button>
+    <button mat-button color="black" class="full" (click)="logar()">Entrar</button>
+    <button mat-button color="black" class="full" routerLink="/registro">Registrar</button>
   </mat-card-actions>
 </mat-card>
 </div>

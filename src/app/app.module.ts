@@ -42,6 +42,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { TopbarComponent } from './componentes/topbar/topbar.component';
+import { MindflowComponent } from './componentes/mindflow/mindflow.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     HomeComponent,
     PrincipalComponent,
     RegistroComponent,
-    PerfilComponent],
+    PerfilComponent,
+    TopbarComponent,
+    MindflowComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -87,7 +91,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     ReactiveFormsModule,
     MatMenuModule,
     MatChipsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    FormsModule
 
 
 

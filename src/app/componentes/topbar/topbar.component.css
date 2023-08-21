@@ -1,0 +1,59 @@
+.mat-toolbar {
+  background: linear-gradient(135deg, #ffffff, #c9caca);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombreamento leve */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.toolbar-symbol {
+  display: flex;
+  justify-content:left;
+  align-items:flex-start;
+
+
+}
+
+.material-symbols-outlined{
+  font-size: 50px;
+  text-align: center;
+}
+
+.toolbar-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info mat-slide-toggle {
+  margin-left: 10px;
+}
+
+.user-info button.mat-icon-button {
+  margin-left: 10px;
+}
+
+.title-text {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.mat-menu-content {
+  background-color: #ffc0cb; /* Cor rosa bebê */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombreamento leve */
+}
+
+.mat-menu-item {
+  color: #333; /* Cor do texto dos itens do menu */
+}
+
+.mat-menu-item:hover {
+  background-color: #fff; /* Fundo branco ao passar o mouse */
+  color: #ff6347; /* Cor de destaque ao passar o mouse */
+}
