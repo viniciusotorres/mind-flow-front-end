@@ -39,16 +39,5 @@ export class PerfilComponent implements OnInit {
 
 
 
-  toggleTheme() {
-    this.darkTheme = !this.darkTheme;
-    const body = this.renderer.selectRootElement('body');
 
-    if (this.darkTheme) {
-      this.renderer.removeClass(body, 'light-theme');
-      this.renderer.addClass(body, 'dark-theme');
-    } else {
-      this.renderer.removeClass(body, 'dark-theme');
-      this.renderer.addClass(body, 'light-theme');
-    }
-  }
 }

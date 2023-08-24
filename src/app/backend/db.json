@@ -42,5 +42,31 @@
       "senha": "123456",
       "id": 6
     }
+  ],
+  "tarefas": [
+    {
+      "id": 2,
+      "descricao": "java",
+      "prioridade": "MÉDIA",
+      "concluido": true,
+      "porcentagem": 0,
+      "idUsuario": 1
+    },
+    {
+      "id": 3,
+      "descricao": "java",
+      "prioridade": "MÉDIA",
+      "concluido": false,
+      "porcentagem": 0,
+      "idUsuario": 1
+    },
+    {
+      "id": 4,
+      "descricao": "java",
+      "prioridade": "MÉDIA",
+      "concluido": true,
+      "porcentagem": 0,
+      "idUsuario": 1
+    }
   ]
 }
