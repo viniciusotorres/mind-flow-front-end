@@ -44,6 +44,18 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { TopbarComponent } from './componentes/topbar/topbar.component';
 import { MindflowComponent } from './componentes/mindflow/mindflow.component';
+import { EstudoComponent } from './componentes/mindflow/estudo/estudo.component';
+import { SaudeComponent } from './componentes/mindflow/saude/saude.component';
+import { EspiritualComponent } from './componentes/mindflow/espiritual/espiritual.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatListModule } from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +66,10 @@ import { MindflowComponent } from './componentes/mindflow/mindflow.component';
     RegistroComponent,
     PerfilComponent,
     TopbarComponent,
-    MindflowComponent],
+    MindflowComponent,
+    EstudoComponent,
+    SaudeComponent,
+    EspiritualComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -92,7 +107,16 @@ import { MindflowComponent } from './componentes/mindflow/mindflow.component';
     MatMenuModule,
     MatChipsModule,
     MatSlideToggleModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule,
+    MatListModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule
+
 
 
 

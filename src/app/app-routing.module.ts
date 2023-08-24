@@ -8,22 +8,54 @@ import { UsuarioAutenticadoGuard } from './service/guard/usuario-autenticado.gua
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { MindflowComponent } from './componentes/mindflow/mindflow.component';
-
+import { EstudoComponent } from './componentes/mindflow/estudo/estudo.component';
+import { SaudeComponent } from './componentes/mindflow/saude/saude.component';
+import { EspiritualComponent } from './componentes/mindflow/espiritual/espiritual.component';
 
 const routes: Routes = [
-  { path: 'mind', component: MindflowComponent, canActivate: [UsuarioAutenticadoGuard] },
-  { path: 'registro', component: RegistroComponent },
-  { path: 'perfil', component: PerfilComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
   {
-    path: '', component: PrincipalComponent, canActivate: [UsuarioAutenticadoGuard],
-    children: [
-      { path: '', component: HomeComponent }
-    ],
+    path: 'mind-estudo',
+    component: EstudoComponent,
+    canActivate: [UsuarioAutenticadoGuard],
   },
+  {
+    path: 'mind',
+    component: MindflowComponent,
+    canActivate: [UsuarioAutenticadoGuard],
+  },
+  {
+    path: 'mind-saude',
+    component: SaudeComponent,
+    canActivate: [UsuarioAutenticadoGuard],
+  },
+  {
+    path: 'mind-espiritual',
+    component: EspiritualComponent,
+    canActivate: [UsuarioAutenticadoGuard],
+  },
+  { path: 'registro', component: RegistroComponent },
+  {
+    path: 'perfil',
+    component: PerfilComponent,
+    canActivate: [UsuarioAutenticadoGuard],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [UsuarioNaoAutenticadoGuard],
+  },
+  {
+    path: '',
+    component: PrincipalComponent,
+    canActivate: [UsuarioAutenticadoGuard],
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

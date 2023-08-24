@@ -21,7 +21,7 @@ export class UsuarioService {
         if (resposta.sucesso) {
           localStorage.setItem('token', btoa(JSON.stringify(resposta.tokenQueSeriaGeradoPelaAPI)));
           localStorage.setItem('usuario', btoa(JSON.stringify(resposta.usuario)));
-          this.router.navigate(['']);
+          this.router.navigate(['principal']);
           location.reload();
         }
       })
@@ -30,13 +30,15 @@ export class UsuarioService {
 
   deslogar() {
     localStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigate(['home']);
   }
 
    obterUsuarioLogado(): IUsuario | null {
     const usuarioString = localStorage.getItem('usuario');
     return usuarioString ? JSON.parse(atob(usuarioString)) : null;
   }
+
+
 
   get obterIdUsuarioLogado(): number | null {
     const usuarioString = localStorage.getItem('usuario');
