@@ -3,5 +3,12 @@ export interface IUsuario {
   nomeCompleto: string,
   email: string,
   senha: string
-  endereco: string
+  endereco: string,
+  data: string,
+  profissao: string,
+  telefone: string,
+  bio: string,
+  insta: string,
+  linke: string
+
 }

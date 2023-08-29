@@ -40,6 +40,7 @@ export class UsuarioService {
 
 
 
+
   get obterIdUsuarioLogado(): number | null {
     const usuarioString = localStorage.getItem('usuario');
     return usuarioString ? (JSON.parse(atob(usuarioString)) as IUsuario).id : null;

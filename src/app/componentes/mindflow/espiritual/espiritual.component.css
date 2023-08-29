@@ -1,0 +1,71 @@
+.input-tarefas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title{
+  text-align: center;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.spinner-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.spinner-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.percentage-label {
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.cart{
+  background-image: linear-gradient(to left, rgb(255, 255, 255), transparent), url("https://blog.tremeterra.com.br/wp-content/uploads/2019/07/286234-saiba-como-comecar-a-meditar-e-melhorar-a-qualidade-de-vida-700x510.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.164);
+  margin-top: 10px;
+}
+
+
+
+.tarefa {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.editar-button,
+.apagar-button {
+  margin-left: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

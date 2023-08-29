@@ -9,15 +9,15 @@ import { Observable } from 'rxjs';
 })
 export class PerfilService {
 
-  private url = 'http://localhost:3000/usuarios'; // Substitua pela URL da sua API fake
+  private url = 'http://localhost:3000/usuarios';
 
   constructor(
-    private http: HttpClient, // Injete o HttpClient
+    private http: HttpClient,
     private usuarioService: UsuarioService
   ) {}
 
   obterUsuarioLogado(): Observable<IUsuario> {
-    const userId = this.usuarioService.obterIdUsuarioLogado; // Use o método para obter o ID do usuário logado do serviço UsuarioService
+    const userId = this.usuarioService.obterIdUsuarioLogado;
     return this.http.get<IUsuario>(`${this.url}/${userId}`);
   }
 

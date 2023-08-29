@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { IUsuario } from '../interfaces/IUsuario';
+import { ITarefa } from '../interfaces/ITarefa';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioMockService {
 
+  private apiUrl = 'http://localhost:3000/tarefas';
   constructor(private httpClient: HttpClient) { }
 
   logar(usuario: IUsuario): Observable<any> {
@@ -33,5 +35,7 @@ export class UsuarioMockService {
     return this.httpClient.get<IUsuario>(`http://localhost:3000/usuarios/${idUsuario}`);
   }
 
-
 }
+
+
+

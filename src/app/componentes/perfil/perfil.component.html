@@ -1,15 +1,38 @@
-<div class="center-card">
-  <mat-card class="profile-card">
-    <div>
-        <span class="material-symbols-outlined">
-          neurology</span>
+<div class="container">
+  <div class="row justify-content-center mt-5" style="margin-left: 60px">
+    <div class="col-md-6">
+      <div class="card profile-card">
+        <div class="card-header text-center">
+          <h4><strong>PERFIL</strong></h4>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-center mb-3">
+            <span class="material-symbols-outlined"> neurology</span>
+          </div>
+          <h2>{{ usuarioLogado.nomeCompleto }}</h2>
+          <p class="bio">{{usuarioLogado.bio}}</p>
+          <div class="cardisinho"><strong>EMAIL</strong></div>
+          <p>{{ usuarioLogado.email }}</p>
+          <div class="cardisinho"><strong>ENDEREÇO</strong></div>
+          <p>{{ usuarioLogado.endereco }}</p>
+          <div class="cardisinho"><strong>DATA DE NASCIMENTO</strong></div>
+            <p>{{usuarioLogado.data}}</p>
+          <div class="cardisinho"><strong>TELEFONE</strong></div>
+            <p>{{usuarioLogado.telefone}}</p>
+          <div class="cardisinho"><strong>PROFISSÃO</strong></div>
+            <p>{{usuarioLogado.profissao}}</p>
+          </div>
+        <div class="cardisinho"><strong>REDES SOCIAIS</strong></div>
+        <div class="input-group mb-3 justify-content-center">
+          <span class="input-group-text" id="insta"><i class="fab fa-instagram" name="insta"></i> {{usuarioLogado.insta}} </span>
+        </div>
+        <div class="input-group mb-3 justify-content-center">
+          <span class="input-group-text" id="linke"><i  class="fab fa-linkedin-in"></i>{{usuarioLogado.linke}}</span>
+        </div>
+        <div class="card-footer d-flex justify-content-center">
+          <button class="btn btn-secondary" routerLink="/editar-perfil">Editar</button>
+        </div>
+      </div>
     </div>
-    <h1>{{ usuarioLogado.nomeCompleto }}</h1>
-    <mat-card class="cardisinho">EMAIL</mat-card>
-    <p>{{ usuarioLogado.email }}</p>
-    <mat-card class="cardisinho">SENHA</mat-card>
-    <p>{{ usuarioLogado.senha }}</p>
-    <button (click)="salvarPerfil()">Salvar</button>
-    <button>Editar</button>
-  </mat-card>
+  </div>
 </div>

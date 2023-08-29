@@ -55,6 +55,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
+import { EditarPerfilComponent } from './componentes/perfil/editar-perfil/editar-perfil.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MindflowComponent,
     EstudoComponent,
     SaudeComponent,
-    EspiritualComponent,],
+    EspiritualComponent,
+    EditarPerfilComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
