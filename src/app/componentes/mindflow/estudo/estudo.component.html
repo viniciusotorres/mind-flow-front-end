@@ -1,57 +1,66 @@
-<div>
-  <div class="card text-center">
-    <div class="card-header">
+<div class="d-flex">
+  <div class="card p-3 flex-fill">
+    <div class="card-header d-flex justify-content-between align-items-center">
       <div>
-      <mat-icon style="margin-top: 5px">school</mat-icon>
+        <mat-icon style="margin-top: 5px">school</mat-icon>
       </div>
-      <b>Adicionar MindFlow</b>
+      <div><b>Adicionar MindFlow</b></div>
     </div>
-    <div>
-      <label for="descricao"><b>A ESTUDAR:</b></label>
-      <input
-        type="text"
-        id="descricao"
-        [(ngModel)]="tarefa.descricao"
-        name="descricao"
-        required
-      />
-
-      <label for="prioridade"><b>PRIORIDADE:</b></label>
-      <select
-        id="prioridade"
-        [(ngModel)]="tarefa.prioridade"
-        name="prioridade"
-        required
-      >
-        <option value="BAIXA">BAIXA</option>
-        <option value="MÉDIA">MÉDIA</option>
-        <option value="ALTA">ALTA</option>
-      </select>
-    </div>
-    <div class="card-footer text-body-secondary">
-      <button
-      class="btn btn-outline-dark btn-lg"
-        type="button"
-        (click)="adicionarTarefa()"
-      >
-        Adicionar MindFlow
-      </button>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="descricao"><b>A ESTUDAR:</b></label>
+          <input
+            type="text"
+            id="descricao"
+            [(ngModel)]="tarefa.descricao"
+            name="descricao"
+            required
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="prioridade"><b>PRIORIDADE:</b></label>
+          <select
+            id="prioridade"
+            [(ngModel)]="tarefa.prioridade"
+            name="prioridade"
+            required
+            class="form-select"
+          >
+            <option value="BAIXA">BAIXA</option>
+            <option value="MÉDIA">MÉDIA</option>
+            <option value="ALTA">ALTA</option>
+          </select>
+        </div>
+        <button
+          class="btn btn-outline-dark btn-lg"
+          type="button"
+          (click)="adicionarTarefa()"
+        >
+          Adicionar MindFlow
+        </button>
+        <button class="btn btn-outline-dark btn-lg" type="button" routerLink="/mind">Voltar</button>
+      </form>
     </div>
   </div>
-  <div class="card cart" style="width: 18rem">
-    <div class="percentage-label">{{ porcentagemTarefas }}%</div>
+  <div class="card p-3 ml-3 d-flex flex-column justify-content-center align-items-center">
+    <div class="percentage-label">{{ porcentagemTarefas >= 0 ? porcentagemTarefas + '%' : '0%' }}</div>
     <mat-progress-spinner
       style="margin-top: 5px"
       class="example-margin"
       [color]="color"
       [mode]="mode"
+      [value]="porcentagemTarefas"
     ></mat-progress-spinner>
     <div class="card-body">
       <h5 class="card-title"><b>PROGRESSO</b></h5>
-      <button class="btn btn-outline-danger" type="button" (click)="excluirTodasTarefas(tarefa)">Limpar Minds</button>
+      <button class="btn btn-outline-danger" type="button">Limpar Minds</button>
     </div>
   </div>
-  <div class="row" style="margin-top: 10px">
+</div>
+
+<div class="row" style="margin-top: 10px">
     <div
       class="col-md-4"
       *ngFor="let tarefa of tarefasUsuario"
@@ -90,4 +99,4 @@
       </div>
     </div>
   </div>
-</div>
+

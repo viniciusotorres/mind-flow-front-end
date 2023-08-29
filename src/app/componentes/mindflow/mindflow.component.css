@@ -140,6 +140,42 @@
   opacity: 1;
 }
 
+.card.escolha {
+  background-image: linear-gradient(to left, rgb(255, 255, 255), transparent);
+  background-size: cover;
+  font-size: 20px;
+  margin-left: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.3s ease;
+  filter: blur(2px);
+}
+.card.escolha:hover {
+  filter: blur(0px);
+}
+
+.card.escolha::after,
+.card.escolha .hover-text {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+.card.escolha:hover::after,
+.card.escolha:hover .hover-text {
+  opacity: 1;
+}
+
 .card-text {
   position: relative;
   z-index: 2;

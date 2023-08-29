@@ -2,17 +2,28 @@
   "usuarios": [
     {
       "email": "carol@gmail.com",
-      "nomeCompleto": "Carol da Silva",
+      "nomeCompleto": "Carol T. da Silva",
       "endereco": "Vicente Pires",
       "senha": "123456",
-      "id": 1
+      "id": 1,
+      "data": "06/05/2002",
+      "telefone": "6194556787",
+      "profissao": "Vendedora",
+      "bio": "21 anos.",
+      "insta": " carol",
+      "linke": " carolSilva"
     },
     {
       "email": "viniciustorres29@gmail.com",
-      "nomeCompleto": "Vinicius Torres",
+      "nomeCompleto": "Vinicius H. A. Tôrres",
       "endereco": "Vicente Pires",
       "senha": "gremionavida",
-      "id": 2
+      "id": 2,
+      "data": "27/02/1999",
+      "telefone": "61999938959",
+      "profissao": "Desenvolvedor",
+      "bio": "24 anos, Dev Front-End Angular.",
+      "insta": "viniciusotorres"
     },
     {
       "email": "fernanda@gmail.com",
@@ -41,31 +52,67 @@
       "endereco": "Vp",
       "senha": "123456",
       "id": 6
-    }
-  ],
-  "tarefas": [
-    {
-      "id": 2,
-      "descricao": "java",
-      "prioridade": "MÉDIA",
-      "concluido": true,
-      "porcentagem": 0,
-      "idUsuario": 1
     },
     {
-      "id": 3,
+      "email": "maguilovin@gmail.com",
+      "nomeCompleto": "DevMaguilinha",
+      "endereco": "qnp 15 conjunto g",
+      "senha": "lindao12345",
+      "id": 7
+    }
+  ],
+  "tarefasEstudos": [
+    {
+      "id": 12,
+      "descricao": "angular",
+      "prioridade": "ALTA",
+      "concluido": true,
+      "idUsuario": 7
+    },
+    {
+      "id": 13,
       "descricao": "java",
       "prioridade": "MÉDIA",
       "concluido": false,
-      "porcentagem": 0,
-      "idUsuario": 1
+      "idUsuario": 2
     },
     {
-      "id": 4,
-      "descricao": "java",
+      "id": 14,
+      "descricao": "Alura",
+      "prioridade": "ALTA",
+      "concluido": false,
+      "idUsuario": 2
+    },
+    {
+      "id": 15,
+      "descricao": "MATEMATICA",
       "prioridade": "MÉDIA",
-      "concluido": true,
-      "porcentagem": 0,
+      "concluido": false,
+      "idUsuario": 1
+    }
+  ],
+  "tarefasSaude": [
+    {
+      "id": 10,
+      "descricao": "Treino de pernas",
+      "prioridade": "MÉDIA",
+      "concluido": false,
+      "idUsuario": 2
+    },
+    {
+      "id": 11,
+      "descricao": "TREINO PERNA",
+      "prioridade": "BAIXA",
+      "concluido": false,
+      "idUsuario": 1
+    }
+  ],
+  "tarefasEspiritual": [
+    {
+      "id": 1,
+      "descricao": "MEDITAÇÃO",
+      "prioridade": "ALTA",
+      "concluido": false,
       "idUsuario": 1
     }
   ]

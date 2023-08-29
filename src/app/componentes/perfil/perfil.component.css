@@ -7,8 +7,12 @@
   text-align: center;
 }
 
+.bio{
+  font-size: 16px
+}
+
 .material-symbols-outlined{
-  font-size: 150px;
+  font-size: 100px;
 }
 
 .center-card {

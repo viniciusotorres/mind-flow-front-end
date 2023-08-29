@@ -1,1 +1,102 @@
-<p>saude works!</p>
+<div class="d-flex">
+  <div class="card p-3 flex-fill">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div>
+        <mat-icon style="margin-top: 5px"> local_hospital</mat-icon>
+      </div>
+      <div><b>Adicionar MindFlow</b></div>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="descricao"><b>A CUIDAR:</b></label>
+          <input
+            type="text"
+            id="descricao"
+            [(ngModel)]="tarefa.descricao"
+            name="descricao"
+            required
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="prioridade"><b>PRIORIDADE:</b></label>
+          <select
+            id="prioridade"
+            [(ngModel)]="tarefa.prioridade"
+            name="prioridade"
+            required
+            class="form-select"
+          >
+            <option value="BAIXA">BAIXA</option>
+            <option value="MÉDIA">MÉDIA</option>
+            <option value="ALTA">ALTA</option>
+          </select>
+        </div>
+        <button
+          class="btn btn-outline-dark btn-lg"
+          type="button"
+          (click)="adicionarTarefa()"
+        >
+          Adicionar MindFlow
+        </button>
+        <button class="btn btn-outline-dark btn-lg" type="button" routerLink="/mind">Voltar</button>
+      </form>
+    </div>
+  </div>
+  <div class="card p-3 ml-3 d-flex flex-column justify-content-center align-items-center">
+    <div class="percentage-label">{{ porcentagemTarefas >= 0 ? porcentagemTarefas + '%' : '0%' }}</div>
+    <mat-progress-spinner
+      style="margin-top: 5px"
+      class="example-margin"
+      [color]="color"
+      [mode]="mode"
+      [value]="porcentagemTarefas"
+    ></mat-progress-spinner>
+    <div class="card-body">
+      <h5 class="card-title"><b>PROGRESSO</b></h5>
+      <button class="btn btn-outline-danger" type="button">Limpar Minds</button>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 10px">
+  <div
+    class="col-md-4"
+    *ngFor="let tarefa of tarefasSaude"
+  >
+    <div class="card cart mb-4">
+      <mat-icon> local_hospital</mat-icon>
+      <div>
+        <p><b>A CUIDAR</b></p>
+        {{ tarefa.descricao }}
+        <p><b>NIVEL DE PRIORIDADE</b></p>
+        {{ tarefa.prioridade }}
+      </div>
+      <div
+        [style.color]="getSpinnerColor(tarefa.prioridade)"
+        class="spinner-grow"
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="form-check form-switch">
+        <input
+          [(ngModel)]="tarefa.concluido"
+          (change)="checkboxChange(tarefa)"
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckChecked"
+          name="concluido"
+          checked
+          [disabled]="tarefa.concluido === true"
+        />
+        <mat-icon class="icon" (click)="excluirTarefa(tarefa)"
+        >delete</mat-icon
+        >
+      </div>
+    </div>
+  </div>
+</div>
+

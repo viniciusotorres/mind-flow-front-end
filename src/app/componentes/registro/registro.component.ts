@@ -10,7 +10,7 @@ import { RegistroService } from 'src/app/service/registro.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
-  formRegister: FormGroup; // Use o nome 'formRegister' para o formulário
+  formRegister: FormGroup; //
 
 
   constructor(private formBuilder: FormBuilder,

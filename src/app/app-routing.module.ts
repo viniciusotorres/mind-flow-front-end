@@ -11,11 +11,17 @@ import { MindflowComponent } from './componentes/mindflow/mindflow.component';
 import { EstudoComponent } from './componentes/mindflow/estudo/estudo.component';
 import { SaudeComponent } from './componentes/mindflow/saude/saude.component';
 import { EspiritualComponent } from './componentes/mindflow/espiritual/espiritual.component';
+import {EditarPerfilComponent} from "./componentes/perfil/editar-perfil/editar-perfil.component";
 
 const routes: Routes = [
   {
     path: 'mind-estudo',
     component: EstudoComponent,
+    canActivate: [UsuarioAutenticadoGuard],
+  },
+  {
+    path: 'editar-perfil',
+    component: EditarPerfilComponent,
     canActivate: [UsuarioAutenticadoGuard],
   },
   {

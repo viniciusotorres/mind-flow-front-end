@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.card-title{
+  text-align: center;
+}
+
 .center-content {
   display: flex;
   justify-content: center;
@@ -23,7 +27,7 @@
 
 .percentage-label {
   position: absolute;
-  top: 27%;
+  top: 23%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 14px;

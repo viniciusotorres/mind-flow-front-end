@@ -9,8 +9,11 @@ import { IUsuario } from 'src/app/interfaces/IUsuario';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  usuarioLogado: any;
-  darkTheme = false;
+  usuarioLogado: any
+
+
+
+
 
   constructor(private perfilService: PerfilService,
               private usuarioService: UsuarioService,
@@ -18,24 +21,17 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit() {
     this.perfilService.obterUsuarioLogado().subscribe(response => {
-      this.usuarioLogado = response
+      this.usuarioLogado = response;
+      console.log('Usuário logado:', this.usuarioLogado);
     });
-    console.log('Usuário logado:', this.usuarioLogado);
   }
 
-  salvarPerfil() {
-    this.perfilService.atualizarPerfil(this.usuarioLogado).subscribe(
-      usuarioAtualizado => {
-        console.log('Perfil atualizado:', usuarioAtualizado);
-      },
-      error => {
-        console.error('Erro ao atualizar perfil:', error);
-      }
-    );
-  }
   deslogar() {
     this.usuarioService.deslogar();
   }
+
+
+
 
 
 
