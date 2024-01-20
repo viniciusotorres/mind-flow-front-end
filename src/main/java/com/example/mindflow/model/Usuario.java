@@ -1,15 +1,14 @@
 package com.example.mindflow.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "usuarios")
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "usuario_id")
     private Long id;
 
     public Long getId() {
@@ -35,8 +34,10 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "senha")
     private String senha;
 
     public String getNomeCompleto() {
@@ -55,7 +56,44 @@ public class Usuario {
         this.enderecoPessoal = enderecoPessoal;
     }
 
+    @Column(name = "usuario_nome")
     private String nomeCompleto;
 
+    @Column(name = "usuario_endereco")
     private String enderecoPessoal;
+
+    @Column(name = "usuario_data")
+    private String dataNascimento;
+
+    @Column(name = "usuario_prifssao")
+    private String profissaoPessoal;
+
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getProfissaoPessoal() {
+        return profissaoPessoal;
+    }
+
+    public void setProfissaoPessoal(String profissaoPessoal) {
+        this.profissaoPessoal = profissaoPessoal;
+    }
+
+    public String getTelofonePessoal() {
+        return telofonePessoal;
+    }
+
+    public void setTelofonePessoal(String telofonePessoal) {
+        this.telofonePessoal = telofonePessoal;
+    }
+
+    @Column(name = "usuario_tel")
+    private String telofonePessoal;
+
 }
