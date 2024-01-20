@@ -13,7 +13,6 @@ import { UsuarioService } from 'src/app/service/usuario.service';
   styleUrls: ['./estudo.component.css'],
 })
 export class EstudoComponent implements OnInit {
-  id: any = this.usuarioService.obterUsuarioLogado()?.id;
 
   tarefa: ITarefa = {
     id: 0,
@@ -38,7 +37,6 @@ export class EstudoComponent implements OnInit {
   }
 
   adicionarTarefa() {
-    this.tarefa.idUsuario = this.usuarioService.obterUsuarioLogado()?.id;
     this.http.post('http://localhost:3000/tarefasEstudos', this.tarefa).subscribe(
       (response: any) => {
         console.log('Tarefa Adicionada', response);
@@ -52,7 +50,7 @@ export class EstudoComponent implements OnInit {
     this.http
       .get(
         'http://localhost:3000/tarefasEstudos?idUsuario=' +
-          this.usuarioService.obterUsuarioLogado()?.id
+          this.usuarioService.obterUsuarioLogado()
       )
       .subscribe(
         (response: any) => {

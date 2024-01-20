@@ -12,7 +12,6 @@ import {UsuarioMockService} from "../../../service/usuario-mock.service";
   styleUrls: ['./espiritual.component.css']
 })
 export class EspiritualComponent {
-  id: any = this.usuarioService.obterUsuarioLogado()?.id;
 
   tarefa: ITarefa = {
     id: 0,
@@ -37,7 +36,6 @@ export class EspiritualComponent {
   }
 
   adicionarTarefa() {
-    this.tarefa.idUsuario = this.usuarioService.obterUsuarioLogado()?.id;
     this.http.post('http://localhost:3000/tarefasEspiritual', this.tarefa).subscribe(
       (response: any) => {
         console.log('Tarefa Adicionada', response);
@@ -51,7 +49,7 @@ export class EspiritualComponent {
     this.http
       .get(
         'http://localhost:3000/tarefasEspiritual?idUsuario=' +
-        this.usuarioService.obterUsuarioLogado()?.id
+        this.usuarioService.obterUsuarioLogado()
       )
       .subscribe(
         (response: any) => {

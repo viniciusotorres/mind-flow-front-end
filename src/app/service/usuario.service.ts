@@ -1,58 +1,79 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { IUsuario } from '../interfaces/IUsuario';
-import { Observable, of } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import {BehaviorSubject, Observable, of} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 import { tap } from 'rxjs/operators';
-import { UsuarioMockService } from './usuario-mock.service'; // Importe o novo serviço mock
+import {IUsuario} from "../interfaces/IUsuario";
+import { NgZone } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-  constructor(private router: Router,
-              private usuarioMockService: UsuarioMockService,
-              ) {}
+  private baseUrl = 'http://localhost:8080';
+
+  private autenticacaoSubject = new BehaviorSubject<boolean>(false);
+  autenticacaoObservable: Observable<boolean> = this.autenticacaoSubject.asObservable();
 
 
 
-  logar(usuario: IUsuario): Observable<any> {
-    return this.usuarioMockService.logar(usuario).pipe(
-      tap((resposta) => {
-        if (resposta.sucesso) {
-          localStorage.setItem('token', btoa(JSON.stringify(resposta.tokenQueSeriaGeradoPelaAPI)));
-          localStorage.setItem('usuario', btoa(JSON.stringify(resposta.usuario)));
-          this.router.navigate(['principal']);
-          location.reload();
-        }
+  constructor(private router: Router, private http: HttpClient, private jwtHelper: JwtHelperService) {}
+
+
+
+  login(usuarioDeLogin: any): Observable<any> {
+    const url = `${this.baseUrl}/login`;
+    return this.http.post(url, usuarioDeLogin).pipe(
+      tap(() => {
+        this.autenticacaoSubject.next(true);
+        window.location.reload();
+      }),
+      catchError(error => {
+        this.autenticacaoSubject.next(false);
+        throw error;
       })
     );
   }
 
+  registrarUsuario(usuario: any): Observable<any> {
+    const url = `${this.baseUrl}/register`;
+    return this.http.post(url, usuario, { responseType: 'text' });
+  }
+
   deslogar() {
-    localStorage.clear();
-    this.router.navigate(['home']);
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
-   obterUsuarioLogado(): IUsuario | null {
-    const usuarioString = localStorage.getItem('usuario');
-    return usuarioString ? JSON.parse(atob(usuarioString)) : null;
+  notificarEstadoAutenticacao(logado: boolean): void {
+    this.autenticacaoSubject.next(logado);
+  }
+  obterUsuarioLogado(): IUsuario | null {
+    const token = localStorage.getItem('token');
+
+    try {
+      if (token && !this.jwtHelper.isTokenExpired(token)) {
+        const decodedToken = this.jwtHelper.decodeToken(token);
+        return decodedToken as IUsuario;
+      }
+      return null;
+    } catch (error) {
+      console.error('Erro ao decodificar o token:', error);
+      return null;
+    }
   }
 
 
 
-
-  get obterIdUsuarioLogado(): number | null {
-    const usuarioString = localStorage.getItem('usuario');
-    return usuarioString ? (JSON.parse(atob(usuarioString)) as IUsuario).id : null;
+  obterTokenUsuario(): string | null {
+    return localStorage.getItem('token');
   }
 
-  get obterTokenUsuario(): string | null {
-    const tokenString = localStorage.getItem('token');
-    return tokenString ? JSON.parse(atob(tokenString)) : null;
-  }
-
-  get logado(): boolean {
-    return localStorage.getItem('token') ? true : false;
+  get isUsuarioAutenticado(): boolean {
+    return !!localStorage.getItem('token');
   }
 
 }
