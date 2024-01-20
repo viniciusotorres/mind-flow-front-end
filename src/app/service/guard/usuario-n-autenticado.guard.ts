@@ -9,7 +9,7 @@ export class UsuarioNaoAutenticadoGuard implements CanActivate{
       private usuarioService: UsuarioService,
       private router: Router) { }
     canActivate(){
-      if (this.usuarioService.logado) {
+      if (this.usuarioService.isUsuarioAutenticado) {
         this.router.navigate(['']);
         return false;
       }

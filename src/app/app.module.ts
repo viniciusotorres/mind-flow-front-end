@@ -11,7 +11,6 @@ import{ HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { FieldsetModule } from 'primeng/fieldset';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { AvatarModule } from 'primeng/avatar';
 import { SidebarModule } from 'primeng/sidebar';
@@ -35,7 +34,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TokenInterceptor } from './service/interceptors/token.interceptor';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import {MatMenuModule} from '@angular/material/menu';
@@ -56,6 +55,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditarPerfilComponent } from './componentes/perfil/editar-perfil/editar-perfil.component';
+import { NovoMindComponent } from './componentes/mindflow/novo-mind/novo-mind/novo-mind.component';
+import { PremiosComponent } from './componentes/premios/premios.component';
+import {OverlayPanelModule} from "primeng/overlaypanel";
+import {JwtHelperService, JWT_OPTIONS, JwtModule} from '@auth0/angular-jwt';
+
+
 
 
 @NgModule({
@@ -71,59 +76,70 @@ import { EditarPerfilComponent } from './componentes/perfil/editar-perfil/editar
     EstudoComponent,
     SaudeComponent,
     EspiritualComponent,
-    EditarPerfilComponent,],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ImageModule,
-    ButtonModule,
-    InputTextModule,
-    PasswordModule,
-    BrowserAnimationsModule,
-    NoopAnimationsModule,
-    CalendarModule,
-    HttpClientModule,
-    FormsModule,
-    FieldsetModule,
-    CheckboxModule,
-    AvatarModule,
-    SidebarModule,
-    MegaMenuModule,
-    InputTextareaModule,
-    BadgeModule,
-    ChipModule,
-    ChipsModule,
-    TagModule,
-    MultiSelectModule,
-    ProgressBarModule,
-    ToastModule,
-    MessagesModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatSnackBarModule,
-    ReactiveFormsModule,
-    MatMenuModule,
-    MatChipsModule,
-    MatSlideToggleModule,
-    FormsModule,
-    MatTooltipModule,
-    MatListModule,
-    MatTableModule,
-    MatProgressSpinnerModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatDialogModule
+    EditarPerfilComponent,
+    NovoMindComponent,
+    PremiosComponent,],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ImageModule,
+        ButtonModule,
+        InputTextModule,
+        PasswordModule,
+        BrowserAnimationsModule,
+        NoopAnimationsModule,
+        CalendarModule,
+        HttpClientModule,
+        FormsModule,
+        FieldsetModule,
+        CheckboxModule,
+        AvatarModule,
+        SidebarModule,
+        MegaMenuModule,
+        InputTextareaModule,
+        BadgeModule,
+        ChipModule,
+        ChipsModule,
+        TagModule,
+        MultiSelectModule,
+        ProgressBarModule,
+        ToastModule,
+        MessagesModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatSnackBarModule,
+        ReactiveFormsModule,
+        MatMenuModule,
+        MatChipsModule,
+        MatSlideToggleModule,
+        MatTooltipModule,
+        MatListModule,
+        MatTableModule,
+        MatProgressSpinnerModule,
+        MatCheckboxModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatDialogModule,
+        OverlayPanelModule,
+      JwtModule.forRoot({
+        config: {
+          tokenGetter: () => {
+            return localStorage.getItem('token');
+          },
+          allowedDomains: ['http://localhost:4200'],  // Substitua pelo seu domínio
+          disallowedRoutes: ['http://localhost:8080'],
+        },
+      }),
 
-
-
-
+    ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
   ],
-  providers: [ { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

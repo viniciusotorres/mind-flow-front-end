@@ -21,7 +21,7 @@
       "id": 2,
       "data": "27/02/1999",
       "telefone": "61999938959",
-      "profissao": "Desenvolvedor",
+      "profissao": "Desenvolvedor JR",
       "bio": "24 anos, Dev Front-End Angular.",
       "insta": "viniciusotorres"
     },
@@ -59,6 +59,16 @@
       "endereco": "qnp 15 conjunto g",
       "senha": "lindao12345",
       "id": 7
+    },
+    {
+      "email": "vini@teste.com",
+      "nomeCompleto": "Vinicius Henrique ",
+      "endereco": "Rua da Misercórdia",
+      "senha": "gremionavida",
+      "id": 8,
+      "profissao": "Dev",
+      "telefone": "000000",
+      "data": "27/02/1999"
     }
   ],
   "tarefasEstudos": [
@@ -70,25 +80,18 @@
       "idUsuario": 7
     },
     {
-      "id": 13,
-      "descricao": "java",
-      "prioridade": "MÉDIA",
-      "concluido": false,
-      "idUsuario": 2
-    },
-    {
-      "id": 14,
-      "descricao": "Alura",
-      "prioridade": "ALTA",
-      "concluido": false,
-      "idUsuario": 2
-    },
-    {
       "id": 15,
       "descricao": "MATEMATICA",
       "prioridade": "MÉDIA",
       "concluido": false,
       "idUsuario": 1
+    },
+    {
+      "id": 16,
+      "descricao": "Matematica",
+      "prioridade": "ALTA",
+      "concluido": true,
+      "idUsuario": 8
     }
   ],
   "tarefasSaude": [
@@ -105,6 +108,13 @@
       "prioridade": "BAIXA",
       "concluido": false,
       "idUsuario": 1
+    },
+    {
+      "id": 12,
+      "descricao": "teSTE SAUDE",
+      "prioridade": "ALTA",
+      "concluido": false,
+      "idUsuario": 2
     }
   ],
   "tarefasEspiritual": [
@@ -114,6 +124,13 @@
       "prioridade": "ALTA",
       "concluido": false,
       "idUsuario": 1
+    },
+    {
+      "id": 2,
+      "descricao": "MEDITAÇÃO",
+      "prioridade": "ALTA",
+      "concluido": true,
+      "idUsuario": 2
     }
   ]
 }

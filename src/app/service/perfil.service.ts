@@ -16,10 +16,7 @@ export class PerfilService {
     private usuarioService: UsuarioService
   ) {}
 
-  obterUsuarioLogado(): Observable<IUsuario> {
-    const userId = this.usuarioService.obterIdUsuarioLogado;
-    return this.http.get<IUsuario>(`${this.url}/${userId}`);
-  }
+
 
   atualizarPerfil(usuario: IUsuario): Observable<IUsuario> {
     return this.http.put<IUsuario>(`${this.url}/${usuario.id}`, usuario);

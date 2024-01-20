@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
-import { RegistroService } from 'src/app/service/registro.service';
+import {UsuarioService} from "../../service/usuario.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-registro',
@@ -10,40 +9,34 @@ import { RegistroService } from 'src/app/service/registro.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
-  formRegister: FormGroup; //
+  formulario: FormGroup;
 
-
-  constructor(private formBuilder: FormBuilder,
-    private registroService: RegistroService,
-    private router: Router,
-    private snackBar: MatSnackBar) {
-    this.formRegister = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+  constructor(private fb: FormBuilder, private usuarioService: UsuarioService, private snackBar: MatSnackBar) {
+    this.formulario = this.fb.group({
       nomeCompleto: ['', Validators.required],
-      endereco: ['', Validators.required],
-      senha: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      senha: ['', Validators.required],
+      enderecoPessoal: ['', Validators.required]
     });
   }
 
-  registrar() {
-    if (this.formRegister.invalid) {
-      return;
+  realizarRegistro() {
+    this.formulario.markAllAsTouched();
+    if (this.formulario.valid) {
+      const novoUsuario = this.formulario.value;
+      this.usuarioService.registrarUsuario(novoUsuario).subscribe(
+        (response) => {
+          this.snackBar.open('Usuário registrado!', 'Fechar', { duration: 3000 });
+          console.log('Resposta do registro:', response);
+          this.formulario.reset();
+        },
+        (error) => {
+          console.error('Erro durante o registro:', error);
+        }
+      );
+    } else {
+      this.snackBar.open('Por favor, preencha todos os campos do registro.','Fechar', {duration: 1500});
+      console.error('Por favor, preencha todos os campos do formulário corretamente.');
     }
-
-    this.registroService.registrarUsuario(this.formRegister.value).subscribe(
-      (response) => {
-        this.snackBar.open('Usuário Registrado com sucesso!', 'Fechar', {
-          duration: 3000
-        })
-        console.log('Usuário registrado com sucesso:', response);
-        this.router.navigate(['/login']);
-      },
-      (error) => {
-        this.snackBar.open('Usuário não foi registrado!', 'Fechar', {
-          duration: 3000
-        } )
-        console.error('Erro ao registrar usuário:', error);
-      }
-    );
   }
 }

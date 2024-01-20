@@ -20,10 +20,6 @@ export class PerfilComponent implements OnInit {
               private renderer: Renderer2) {}
 
   ngOnInit() {
-    this.perfilService.obterUsuarioLogado().subscribe(response => {
-      this.usuarioLogado = response;
-      console.log('Usuário logado:', this.usuarioLogado);
-    });
   }
 
   deslogar() {

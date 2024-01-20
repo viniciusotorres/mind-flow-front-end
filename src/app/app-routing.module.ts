@@ -12,6 +12,8 @@ import { EstudoComponent } from './componentes/mindflow/estudo/estudo.component'
 import { SaudeComponent } from './componentes/mindflow/saude/saude.component';
 import { EspiritualComponent } from './componentes/mindflow/espiritual/espiritual.component';
 import {EditarPerfilComponent} from "./componentes/perfil/editar-perfil/editar-perfil.component";
+import {NovoMindComponent} from "./componentes/mindflow/novo-mind/novo-mind/novo-mind.component";
+import {PremiosComponent} from "./componentes/premios/premios.component";
 
 const routes: Routes = [
   {
@@ -22,22 +24,21 @@ const routes: Routes = [
   {
     path: 'editar-perfil',
     component: EditarPerfilComponent,
-    canActivate: [UsuarioAutenticadoGuard],
+
   },
   {
     path: 'mind',
     component: MindflowComponent,
-    canActivate: [UsuarioAutenticadoGuard],
   },
   {
     path: 'mind-saude',
     component: SaudeComponent,
-    canActivate: [UsuarioAutenticadoGuard],
+
   },
   {
     path: 'mind-espiritual',
     component: EspiritualComponent,
-    canActivate: [UsuarioAutenticadoGuard],
+
   },
   { path: 'registro', component: RegistroComponent },
   {
@@ -53,7 +54,6 @@ const routes: Routes = [
   {
     path: '',
     component: PrincipalComponent,
-    canActivate: [UsuarioAutenticadoGuard],
   },
   {
     path: 'home',

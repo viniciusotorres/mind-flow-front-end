@@ -12,7 +12,6 @@ import {UsuarioMockService} from "../../../service/usuario-mock.service";
   styleUrls: ['./saude.component.css']
 })
 export class SaudeComponent {
-  id: any = this.usuarioService.obterUsuarioLogado()?.id;
 
   tarefa: ITarefa = {
     id: 0,
@@ -37,7 +36,6 @@ export class SaudeComponent {
   }
 
   adicionarTarefa() {
-    this.tarefa.idUsuario = this.usuarioService.obterUsuarioLogado()?.id;
     this.http.post('http://localhost:3000/tarefasSaude', this.tarefa).subscribe(
       (response: any) => {
         console.log('Tarefa Adicionada', response);
@@ -50,8 +48,8 @@ export class SaudeComponent {
   buscarTarefasUsuario() {
     this.http
       .get(
-        'http://localhost:3000/tarefasSaude?idUsuario=' +
-        this.usuarioService.obterUsuarioLogado()?.id
+        'http://localhost:3000/tarefasSaude?idUsuario='
+
       )
       .subscribe(
         (response: any) => {
