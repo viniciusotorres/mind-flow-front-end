@@ -12,7 +12,7 @@
           <h2>{{ usuarioLogado.nomeCompleto }}</h2>
           <p class="bio">{{usuarioLogado.bio}}</p>
           <div class="cardisinho"><strong>EMAIL</strong></div>
-          <p>{{ usuarioLogado.email }}</p>
+          <p>{{ usuarioLogado.sub }}</p>
           <div class="cardisinho"><strong>ENDEREÇO</strong></div>
           <p>{{ usuarioLogado.endereco }}</p>
           <div class="cardisinho"><strong>DATA DE NASCIMENTO</strong></div>
@@ -28,9 +28,6 @@
         </div>
         <div class="input-group mb-3 justify-content-center">
           <span class="input-group-text" id="linke"><i  class="fab fa-linkedin-in"></i>{{usuarioLogado.linke}}</span>
-        </div>
-        <div>
-          {{usuarioLogado.premioTitulo}}
         </div>
         <div class="card-footer d-flex justify-content-center">
           <button class="btn btn-secondary" routerLink="/editar-perfil">Editar</button>
