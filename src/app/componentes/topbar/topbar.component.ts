@@ -27,7 +27,12 @@ export class TopbarComponent implements OnInit{
   }
 
   deslogar() {
-    this.usuarioService.deslogar();
-    this.usuarioLogado = null;
-  }
-}
+    this.usuarioService.logout().subscribe(
+      () => {
+        this.usuarioLogado = null;
+      },
+      (error) => {
+        console.error('Erro durante o logout:', error);
+      }
+    );
+  }}

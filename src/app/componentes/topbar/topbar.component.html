@@ -1,11 +1,24 @@
-<mat-toolbar>
-  <span>MINDFLOW</span>
+<mat-toolbar color="white">
+  <mat-toolbar-row>
+    <button *ngIf="usuarioLogado" mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button routerLink="/perfil" mat-menu-item>Perfil</button>
+      <button routerLink="/mind" mat-menu-item>MindFlow</button>
+      <button routerLink="/premios" mat-menu-item>Prêmios</button>
+    </mat-menu>
+    <span routerLink="/">MINDFLOW</span>
   <div class="user-info">
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
     <ng-container >
-      <span *ngIf="usuarioLogado">Olá, {{ usuarioLogado.sub }}</span>
+      <span *ngIf="usuarioLogado" routerLink="/perfil">Olá, {{ usuarioLogado.sub }}</span>
       <button *ngIf="usuarioLogado" mat-icon-button (click)="deslogar()" aria-label="Logout">
         <span class="material-icons">meeting_room</span>
       </button>
     </ng-container>
   </div>
+  </mat-toolbar-row>
 </mat-toolbar>
+

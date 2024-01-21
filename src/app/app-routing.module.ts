@@ -58,6 +58,11 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'premios',
+    component: PremiosComponent,
+    canActivate: [UsuarioAutenticadoGuard],
   }
 ];
 @NgModule({

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import {BehaviorSubject, Observable, of} from 'rxjs';
+import {BehaviorSubject, EMPTY, Observable, of} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { tap } from 'rxjs/operators';
@@ -22,7 +22,27 @@ export class UsuarioService {
 
   constructor(private router: Router, private http: HttpClient, private jwtHelper: JwtHelperService) {}
 
+  logout(): Observable<any> {
+    const url = `${this.baseUrl}/logout`;
+    const token = localStorage.getItem('token');
 
+    if (!token) {
+      console.error('Token não encontrado no armazenamento local durante o logout.');
+      return EMPTY;
+    }
+
+    return this.http.post(url, { token }).pipe(
+      tap(() => {
+        this.autenticacaoSubject.next(false);
+        localStorage.removeItem('token');
+        this.router.navigate(['/login']);
+      }),
+      catchError(error => {
+        console.error('Erro durante o logout:', error);
+        throw error;
+      })
+    );
+  }
 
   login(usuarioDeLogin: any): Observable<any> {
     const url = `${this.baseUrl}/login`;
@@ -44,7 +64,6 @@ export class UsuarioService {
   }
 
   deslogar() {
-    localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
 

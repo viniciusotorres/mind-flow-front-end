@@ -11,20 +11,13 @@ import { IUsuario } from 'src/app/interfaces/IUsuario';
 export class PerfilComponent implements OnInit {
   usuarioLogado: any
 
-
-
-
-
-  constructor(private perfilService: PerfilService,
-              private usuarioService: UsuarioService,
-              private renderer: Renderer2) {}
+  constructor(private usuarioService: UsuarioService) {
+    this.usuarioLogado = this.usuarioService.obterUsuarioLogado();
+  }
 
   ngOnInit() {
   }
 
-  deslogar() {
-    this.usuarioService.deslogar();
-  }
 
 
 
