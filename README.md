@@ -8,7 +8,7 @@ O MindFlow é um sistema desenvolvido para ajudar você a organizar e acompanhar
 
 ## TECNOLOGIAS
 
-Angular, Material, Bootstrap.
+Front-end(Angular Material) , Back-end(SpringBoot).
 
 ## TELA DE LOGIN
 ![image](https://github.com/viniciusotorres/projeto-mind-flow/assets/117120838/f6f1ba51-0b78-454e-bd08-122152df86a8)
